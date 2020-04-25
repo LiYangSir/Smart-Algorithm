@@ -1,4 +1,4 @@
-<h1 align=center>智能算法之遗传算法</h1>
+<h1 align=center>智能算法之Genetic Algorithm遗传算法</h1>
 
 <div align="center">
 <image src="https://markdown-liyang.oss-cn-beijing.aliyuncs.com/label/Github-LiYangSir-brightgreen.svg">
