@@ -1,4 +1,4 @@
-<h1 align=center>优化算法之遗传算法</h1>
+<h1 align=center>智能算法之遗传算法</h1>
 
 <div align="center">
 <image src="https://markdown-liyang.oss-cn-beijing.aliyuncs.com/label/Github-LiYangSir-brightgreen.svg">
@@ -8,7 +8,8 @@
 </div>
 
 -----
-> 前言：本文主要围绕 Matlab 的实现展开，Java版本以及Python版本参考文章最后的源码地址，MatLab和python实现大致相同，Java较为不同
+> 前言：本文主要围绕 Matlab 的实现展开，Java版本以及Python版本参考文章最后的源码地址，MatLab和python实现大致相同，Java较为不同。
+
 
 ## 1、什么是遗传算法
 
@@ -41,7 +42,7 @@
 
 &emsp;&emsp;正所谓 “不结合代码的解释都是** ” 。下面结合代码来梳理遗传算法的实现。
 <div align=center>
-<img src=https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/GA%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/%E5%88%9D%E5%A7%8B%E7%BB%93%E6%9E%84.png width=100% alt=基本结构>
+<img src=https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/GA%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/%E5%88%9D%E5%A7%8B%E7%BB%93%E6%9E%84.png width=50% alt=基本结构>
 </div>
 
 &emsp;&emsp;涉及到还是适应度函数、选择、交叉、变异这几个模块。下面就这几个模块展开说明。具体的流程图解释如下：
@@ -70,7 +71,7 @@ x = \dfrac{染色体编码对应的十进制值}{2^n - 1} \times 8 + 2
 $$
 &emsp;&emsp;种群初始化基本结构如下，实数范围还需要进一步计算得到真正得x轴的浮点值。
 <div align=center>
-<img src=https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/GA%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/%E7%A7%8D%E7%BE%A4%E7%BB%93%E6%9E%84.png width=100% alt=基本结构>
+<img src=https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/GA%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/%E7%A7%8D%E7%BE%A4%E7%BB%93%E6%9E%84.png width=50% alt=基本结构>
 </div>
 ```matlab
 % popsize: 种群个数
@@ -102,7 +103,7 @@ pop2 = temp*10/1023; % 限制到[0, 10]
 **注：** 选择后后的个体数目和原种群个数相同。
 
 <div align=center>
-<img src=https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/GA%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/%E8%BD%AE%E7%9B%98%E8%B5%8C.png width=35% alt=轮盘赌法>
+<img src=https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/GA%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/%E8%BD%AE%E7%9B%98%E8%B5%8C.png width=25% alt=轮盘赌法>
 </div>
 
 &emsp;&emsp;大自然就像那个指针，适应度值越大，表明这个体约适应这个环境，那么被选择的概率越大，与此同时，适应度值小的个体并不代表不会被选中，只是选中的概率小，一方面也保证了正负样本的一个均衡。
@@ -135,12 +136,12 @@ end
 **随机长度交叉：**
 
 <div align=center>
-<img src=https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/GA%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/%E4%BA%A4%E5%8F%89.png width=90% alt=交叉-随机片段>
+<img src=https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/GA%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/%E4%BA%A4%E5%8F%89.png width=50% alt=交叉-随机片段>
 </div>
 
 **随机距离交叉（本例实现）：**
 <div align=center>
-<img src=https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/GA%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/%E4%BA%A4%E5%8F%892.png width=90% alt=交叉-随机片段>
+<img src=https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/GA%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/%E4%BA%A4%E5%8F%892.png width=50% alt=交叉-随机片段>
 </div>
 
 **程序实现：**
@@ -166,7 +167,7 @@ end
 ### 3.5、变异
 &emsp;&emsp;变异就变得更加简单，对于二进制编码，只需要将随机一个基因位置进行取反操作。
 <div align=center>
-<img src=https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/GA%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/%E5%8F%98%E5%BC%82.png width=80% alt=变异操作>
+<img src=https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/GA%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/%E5%8F%98%E5%BC%82.png width=50% alt=变异操作>
 </div>
 
 **程序实现：**
@@ -195,7 +196,7 @@ end
 ### 3.6、主函数
 主函数主要是围绕下面的流程图进行计算。
 <div align=center>
-<img src=https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/GA%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/%E5%88%9D%E5%A7%8B%E7%BB%93%E6%9E%84.png width=100% alt=基本结构>
+<img src=https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/GA%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/%E5%88%9D%E5%A7%8B%E7%BB%93%E6%9E%84.png width=60% alt=基本结构>
 </div>
 
 **程序实现：**
@@ -238,14 +239,14 @@ fprintf('The best Y is --->>%5.2f\n',bestfit);
 
 ## 4、运行结果展示
 <div align=center>
-<img src=https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/GA%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/totalRes.png width=100% alt=运行结果>
+<img src=https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/GA%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/totalRes.png width=60% alt=运行结果>
 </div>
 
 ## 总结
 
 遗传算法同样会陷入局部最优解的情况，例如下面的情况：
 <div align=center>
-<img src=https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/GA%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/%E5%B1%80%E9%83%A8%E6%9C%80%E4%BC%98%E8%A7%A3.png width=100% alt=运行结果>
+<img src=https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/GA%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/%E5%B1%80%E9%83%A8%E6%9C%80%E4%BC%98%E8%A7%A3.png width=60% alt=运行结果>
 </div>
 
 解决局部最优解的方法有很多，小伙伴可以自行百度，我这里提供一种方法叫做非线性寻优，利用matlab自带函数fmincon进行非线性寻优。
@@ -255,7 +256,7 @@ fprintf('The best Y is --->>%5.2f\n',bestfit);
 ## 最后
 
 更多精彩内容，大家可以转到我的主页：[曲怪曲怪的主页](http://quguai.cn/)
-**源码地址**：[github地址]()
+**源码地址**：[github地址](https://github.com/LiYangSir/SmartAlgorithm)
 
 
 
