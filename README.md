@@ -28,7 +28,7 @@
 微信公众号：**TeaUrn**
 或者扫描下方二维码进行关注。里面有惊喜等你哦~~
 
-<img src="https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg" width=40%>
+<img src="https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg" width=30%>
 
 ### 捐赠
 如果您觉得文章对您有所帮助，可以请作者喝☕。
