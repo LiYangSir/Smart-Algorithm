@@ -15,12 +15,12 @@
 
 **蚁群算法解决TSP问题：**
 <div align=center>
-<img src=https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/ACO%E8%9A%81%E7%BE%A4%E7%AE%97%E6%B3%95/res.png  width=50% alt=TSP问题>
+<img src=https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/ACO%E8%9A%81%E7%BE%A4%E7%AE%97%E6%B3%95/TSP.gif  width=50% alt=TSP问题>
 </div>
 
 **蚁群算法解决机器人路径规划问题：**
 <div align=center>
-<img src=https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/ACO%E8%9A%81%E7%BE%A4%E7%AE%97%E6%B3%95/route.png  width=50% alt=路径规划>
+<img src=https://markdown-liyang.oss-cn-beijing.aliyuncs.com/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/ACO%E8%9A%81%E7%BE%A4%E7%AE%97%E6%B3%95/Magine.gif  width=50% alt=路径规划>
 </div>
 
 ## 1、什么是蚁群算法
@@ -150,7 +150,7 @@ L_ave = zeros(epochs, 1);
 ```
 
 ### 3.5、安排蚂蚁初始位置
-主要是将所有的蚂蚁安置在所有的城市当中，蚂蚁个数 >= 城市个数。并且保证均匀分布。
+&emsp;&emsp;主要是将所有的蚂蚁安置在所有的城市当中，蚂蚁个数 >= 城市个数。并且保证均匀分布。
 ```matlab
 % 初始随机位置
 RandPos = [];
@@ -161,9 +161,9 @@ end
 Route(:, 1) = (RandPos(1, 1:ants))';
 ```
 ### 3.6、蚂蚁周游
-由于蚂蚁的初始位置已经确定，所有主要就是周游剩余的所有城市，循环（cities-1）次。里面的循环就是将所有的蚂蚁进行周游一次。
+&emsp;&emsp;由于蚂蚁的初始位置已经确定，所有主要就是周游剩余的所有城市，循环（cities-1）次。里面的循环就是将所有的蚂蚁进行周游一次。
 
-对于每只蚂蚁的周游主要是对剩余的城市进行周游，不能重复拜访同一个城市。NoVisited矩阵存储着该蚂蚁未访问的城市。然后在所有没有访问过城市中选择一个。选择的方式也是类似于轮盘赌法。概率函数表征信息素和启发因子，两者有着不同的重要程度。
+&emsp;&emsp;对于每只蚂蚁的周游主要是对剩余的城市进行周游，不能重复拜访同一个城市。NoVisited矩阵存储着该蚂蚁未访问的城市。然后在所有没有访问过城市中选择一个。选择的方式也是类似于轮盘赌法。概率函数表征信息素和启发因子，两者有着不同的重要程度。
 $$
 P = [\tau_{ij}(t)]^\alpha · [\eta_{ij}]^\beta
 $$
@@ -194,7 +194,7 @@ for j = 2: cities
     end
 ```
 ### 3.7、记录最优路线以及最短距离
-计算每个回合每只蚂蚁走过的距离。并记录该回合最短路径，最短距离和平均距离。
+&emsp;&emsp;计算每个回合每只蚂蚁走过的距离。并记录该回合最短路径，最短距离和平均距离。
 ```matlab
 Distance_epoch = zeros(ants, 1);
 for i = 1: ants
@@ -212,7 +212,7 @@ epoch = epoch + 1;
 ```
 
 ### 3.8、更新信息素
-更新信息素主要保证获得最优距离的那条路线的信息素得到最大的增强。
+&emsp;&emsp;更新信息素主要保证获得最优距离的那条路线的信息素得到最大的增强。
 ```matlab
 Delta_Tau = zeros(cities, cities);
 for i = 1: ants
@@ -225,7 +225,7 @@ Tau = (1 - rho) .* Tau + Delta_Tau;
 Route = zeros(ants, cities);
 ```
 ### 3.9、结果输出
-迭代完成后,在R_best矩阵中得到最短路径的最小路线，最后输出最优的结果。
+&emsp;&emsp;迭代完成后,在R_best矩阵中得到最短路径的最小路线，最后输出最优的结果。
 **结果输出实现：**
 ```matlab
 Pos = find(L_best == min(L_best));

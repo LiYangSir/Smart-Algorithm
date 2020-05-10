@@ -2,10 +2,10 @@ clear;
 clc;
 x=[51 27 56 21 4 6 58 71 54 40 94 18 89 33 12 25 24 58 71 94 17 38 13 82 12 58 45 11 47 4]';
 y=[14 81 67 92 64 19 98 18 62 69 30 54 10 46 34 18 42 69 61 78 16 40 10 7 32 17 21 26 35 90]';
-position = 50 * randn(40, 2);
+position = 100 * randn(40, 2);
 % position = [x, y];
 epochs = 50;
-ants = 40;
+ants = 50;
 alpha = 1.4;
 beta = 2.2;
 rho = 0.15;Q = 10^6;
@@ -93,10 +93,10 @@ Pos = find(L_best == min(L_best));
 Short_Route = R_best(Pos(1), :);
 Short_Length = L_best(Pos(1), :);
 figure
-subplot(121);
+% subplot(121);
 DrawRoute(position, Short_Route);
-subplot(122);
-plot(L_best);
-hold on
-plot(L_ave, 'r');
-title('平均距离和最短距离');
+% subplot(122);
+% plot(L_best);
+% hold on
+% plot(L_ave, 'r');
+% title('平均距离和最短距离');

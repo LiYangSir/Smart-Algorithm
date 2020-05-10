@@ -22,6 +22,7 @@
 智能算法-遗传算法、蚁群算法、粒子群算法实现。实现版本Java,Python,MatLab多版本实现。具体详细说明点击下面连接针对每个算法有着详细的说明。
 [蚁群算法：Ant_Colony_Optimization](/Ant_Colony_Optimization)
 [遗传算法：Genetic_Algorithm](/Genetic_Algorithm)
+[粒子群算法：Immunity_Algorithm](/Immunity_Algorithm)
 
 
 ### 联系方式：
